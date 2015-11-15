@@ -9,7 +9,6 @@ let {
   StyleSheet,
   Text,
   TextInput,
-  Image,
   TouchableHighlight,
   View,
   Navigator,
@@ -28,28 +27,24 @@ class Register extends React.Component{
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Welcome to Meteor Chat!</Text>
-        <Image
-          style={styles.image}
-          source={require('./meteor-welcome.png')}
-        />
+        <Text style={styles.title}>Signup</Text>
         <TextInput
           style={styles.input}
           ref='registerUsername'
-          placeholder={"Username"}
+          placeholder={"username"}
           value={this.state.username}
           onChange={(e) => {this.setState({username: e.nativeEvent.text})}}
           />
         <TextInput
           style={styles.input}
           ref='registerPassword'
-          placeholder="Password"
+          placeholder="password"
           secureTextEntry={true}
           value={this.state.password}
           onChange={(e) => {this.setState({password: e.nativeEvent.text})}}
           />
         <TouchableHighlight
-          underlayColor='#D97573'
+          underlayColor='green'
           style={styles.button}
           onPress={() => {
             let {username, password} = this.state;
@@ -64,7 +59,7 @@ class Register extends React.Component{
                 });
             }
           }}>
-          <Text style={styles.buttonText}>Sign Up</Text>
+          <Text style={styles.buttonText}>SIGNUP</Text>
         </TouchableHighlight>
         <TouchableHighlight
           underlayColor='transparent'
@@ -72,7 +67,7 @@ class Register extends React.Component{
           onPress={() => {
             this.props.switch();
           }}>
-          <Text style={styles.link}>Already have an account? Login here</Text>
+          <Text style={styles.link}>LOGIN</Text>
         </TouchableHighlight>
       </View>
     );
@@ -86,17 +81,14 @@ let styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'stretch',
     justifyContent: 'center',
-    padding: 20
-  },
-  image: {
-    alignSelf: 'center',
-    marginBottom: 30
   },
   input: {
     height: 50,
-    marginBottom: 12,
-    fontSize: 16,
-    padding: 15,
+    padding: 4,
+    marginRight: 5,
+    fontSize: 23,
+    borderWidth: 1,
+    margin: 10,
     borderColor: '#b4b4b4',
     borderRadius: 8,
     color: 'black',
@@ -104,16 +96,14 @@ let styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    fontSize: 28,
-    fontWeight: '300',
-    color: '#1A263F',
+    fontSize: 25,
     padding: 5,
-    marginBottom: 10
   },
   button: {
-    backgroundColor: '#E0514B',
+    backgroundColor: 'red',
     padding: 15,
-    marginTop: 15,
+    marginLeft: 30,
+    marginRight: 30,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: 'white',
@@ -124,10 +114,10 @@ let styles = StyleSheet.create({
     fontSize: 18,
   },
   link: {
-    color: '#1A263F',
+    color: 'blue',
     textAlign: 'center',
     fontSize: 14,
-    marginTop: 10, 
+    marginTop: 10,
   },
   linkContainer: {
 
