@@ -79,21 +79,20 @@ class Chat extends React.Component{
     let titleConfig = { title: 'Meteor Chat', tintColor: 'white' };
     var rightButtonConfig = {
       title: 'Profile',
-      tintColor: '#fff',
       handler: function onNext() {
         self.showActionSheet();
       }
     };
     return (
       <View style={{flex: 1,}}>
-        <NavigationBar title={titleConfig} rightButton={rightButtonConfig} tintColor="#1A263F"/>
+        <NavigationBar title={titleConfig} rightButton={rightButtonConfig} tintColor='black'/>
         <InvertibleScrollView inverted={true} ref='invertible' style={{flex: .8}}>
           <MessageBox messages={this.state.messages} />
         </InvertibleScrollView>
         <View style={{flex: .1, backgroundColor: 'white', flexDirection: 'row'}}>
           <TextInput
             value={this.state.newMessage}
-            placeholder='Say something...'
+            placeholder='message'
             onChange={(e) => {this.setState({newMessage: e.nativeEvent.text}); }}
             style={styles.input}
             />
@@ -112,7 +111,7 @@ class Chat extends React.Component{
               }
             }}
             underlayColor='red'>
-            <Text style={styles.buttonText}>Send</Text>
+            <Text style={styles.buttonText}>SEND</Text>
           </TouchableHighlight>
         </View>
       </View>
@@ -123,10 +122,10 @@ class Chat extends React.Component{
 let styles = StyleSheet.create({
   input: {
     height: 50,
-    padding: 8,
+    padding: 4,
     flex: 1,
     marginRight: 5,
-    fontSize: 16,
+    fontSize: 23,
     borderWidth: 1,
     margin: 10,
     borderColor: '#b4b4b4',
@@ -136,7 +135,7 @@ let styles = StyleSheet.create({
   },
   button: {
     flex: .4,
-    backgroundColor: "#E0514B",
+    backgroundColor: 'red',
     borderRadius: 6,
     justifyContent: 'center',
     margin: 10,
