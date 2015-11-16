@@ -5,7 +5,7 @@ import _ from 'underscore';
 
 let ddpClient = new DDPClient({
   // All properties optional, defaults shown
-  host : "localhost",
+  host : "192.168.1.3",
   port : 3000,
   ssl  : false,
   autoReconnect : true,

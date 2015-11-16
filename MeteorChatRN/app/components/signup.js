@@ -18,15 +18,15 @@ class Signup extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      register: true,
-      login: false,
+      register: false,
+      login: true,
       userId: '',
       loggedIn: false,
     }
   }
 
   render(){
-    let titleConfig = { title: 'Welcome', tintColor: 'white' };
+    let titleConfig = { title: 'Signup', tintColor: 'white' };
     let register = <View></View>;
     let login = <View></View>;
     if (this.state.login) {
@@ -49,7 +49,7 @@ class Signup extends React.Component{
 
     return (
       <View style={{flex: 1}}>
-        <NavigationBar title={titleConfig} tintColor="#1A263F" />
+        <NavigationBar title={titleConfig} tintColor='black'/>
         {register}
         {login}
       </View>

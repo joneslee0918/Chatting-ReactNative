@@ -28,7 +28,7 @@ class Login extends React.Component{
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Welcome Back!</Text>
+        <Text style={styles.title}>LOGIN</Text>
         <TextInput
           style={styles.input}
           ref='registerUsername'
@@ -45,7 +45,7 @@ class Login extends React.Component{
           onChangeText={(text) => this.setState({password: text})}
           />
         <TouchableHighlight
-          underlayColor='#D97573'
+          underlayColor='green'
           style={styles.button}
           onPress={() => {
             let self = this;
@@ -62,7 +62,7 @@ class Login extends React.Component{
             }
           }}
           >
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableHighlight>
         <TouchableHighlight
           underlayColor='transparent'
@@ -70,7 +70,7 @@ class Login extends React.Component{
           onPress={() => {
             this.props.switch();
           }}>
-          <Text style={styles.link}>Don't have an account? Sign up here!</Text>
+          <Text style={styles.link}>REGISTER</Text>
         </TouchableHighlight>
       </View>
     );
@@ -85,13 +85,14 @@ let styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'stretch',
     justifyContent: 'center',
-    padding: 20
   },
   input: {
     height: 50,
-    marginBottom: 20,
-    fontSize: 16,
-    padding: 15,
+    padding: 4,
+    marginRight: 5,
+    fontSize: 23,
+    borderWidth: 1,
+    margin: 10,
     borderColor: '#b4b4b4',
     borderRadius: 8,
     color: 'black',
@@ -101,12 +102,12 @@ let styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
     padding: 5,
-    marginBottom: 30
   },
   button: {
-    backgroundColor: '#E0514B',
+    backgroundColor: 'red',
     padding: 15,
-    marginTop: 15,
+    marginLeft: 30,
+    marginRight: 30,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: 'white',
@@ -117,10 +118,10 @@ let styles = StyleSheet.create({
     fontSize: 18,
   },
   link: {
-    color: '#1A263F',
+    color: 'blue',
     textAlign: 'center',
     fontSize: 14,
-    marginTop: 10, 
+    marginTop: 10,
   },
   linkContainer: {
 
