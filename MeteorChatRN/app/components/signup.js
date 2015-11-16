@@ -9,6 +9,7 @@ let {
   AppRegistry,
   StyleSheet,
   Text,
+  Image,
   View,
   Navigator,
   ActivityIndicatorIOS,
@@ -18,15 +19,15 @@ class Signup extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      register: false,
-      login: true,
+      register: true,
+      login: false,
       userId: '',
       loggedIn: false,
     }
   }
 
   render(){
-    let titleConfig = { title: 'Signup', tintColor: 'white' };
+    let titleConfig = { title: 'Welcome', tintColor: 'white' };
     let register = <View></View>;
     let login = <View></View>;
     if (this.state.login) {
@@ -49,7 +50,7 @@ class Signup extends React.Component{
 
     return (
       <View style={{flex: 1}}>
-        <NavigationBar title={titleConfig} tintColor='black'/>
+        <NavigationBar title={titleConfig} tintColor="#1A263F" />
         {register}
         {login}
       </View>

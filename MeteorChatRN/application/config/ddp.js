@@ -35,8 +35,7 @@ ddp.initialize = function () {
       if (wasReconnect) {
         console.log('Reestablishment of a connection.');
       }
-
-      console.log('connected!', ddpClient);
+      console.log('connected!');
       resolve(true);
     });
   });
@@ -87,7 +86,6 @@ ddp.call = function(methodName, params) {
 
 // Method to login with a saved token
 ddp.loginWithToken = function() {
-  console.log('LOGIN');
   return new Promise(function(resolve, reject) {
     // Check if we have a loginToken in persistent client storage
     AsyncStorage.getItem('loginToken')
@@ -105,17 +103,13 @@ ddp.loginWithToken = function() {
               AsyncStorage.setItem('userId', res.id)
               AsyncStorage.setItem('loginToken', res.token);
               AsyncStorage.setItem('loginTokenExpires', res.tokenExpires);
-              AsyncStorage.getItem('username')
-              .then(function(username) {
-                obj = {
-                  loggedIn: true,
-                  userId: res.id,
-                  username: username
-                };
 
-                resolve(obj);
-              });
+              obj = {
+                loggedIn: true,
+                userId: res.id
+              };
 
+              resolve(obj);
             } else {
               resolve(obj);
             }
@@ -148,7 +142,6 @@ ddp.loginWithPassword = function(username, password) {
       if (res) {
         console.log('sucess!');
         AsyncStorage.setItem('userId', res.id)
-        AsyncStorage.setItem('username', username);
         AsyncStorage.setItem('loginToken', res.token);
         AsyncStorage.setItem('loginTokenExpires', res.tokenExpires);
 
