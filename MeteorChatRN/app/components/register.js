@@ -10,6 +10,7 @@ let {
   Text,
   TextInput,
   Image,
+  ScrollView,
   TouchableHighlight,
   DeviceEventEmitter,
   View,
@@ -44,7 +45,7 @@ class Register extends React.Component{
   }
   render(){
     return (
-      <View style={[styles.container, {paddingBottom: this.state.keyboardOffset}]}>
+      <ScrollView style={[styles.container, {paddingBottom: this.state.keyboardOffset}]}>
         <Text style={styles.title}>Welcome to Meteor Chat!</Text>
         <Image
           style={styles.image}
@@ -77,7 +78,7 @@ class Register extends React.Component{
                   return ddp.loginWithPassword(this.state.username, this.state.password);
                 })
                 .then((userId) => {
-                  this.props.loggedIn(userId);
+                  this.props.loggedIn(userId, username);
                 });
             }
           }}>
@@ -91,7 +92,7 @@ class Register extends React.Component{
           }}>
           <Text style={styles.link}>Already have an account? Login here</Text>
         </TouchableHighlight>
-      </View>
+      </ScrollView>
     );
   }
 };
