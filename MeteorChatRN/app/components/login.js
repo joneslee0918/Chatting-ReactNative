@@ -71,7 +71,7 @@ class Login extends React.Component{
               .then((res) => {
                 console.log('RES', res);
                 if (res.loggedIn === true) {
-                  this.props.loggedIn(res.userId, username);
+                  this.props.loggedIn();
                 }
               })
             }
