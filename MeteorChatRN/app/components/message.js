@@ -94,6 +94,42 @@ let styles = StyleSheet.create({
   messageText: {
     fontSize: 14,
     fontWeight: '300',
+    padding: 10
+  },
+  row: {
+    flexDirection: 'row',
+    marginBottom: 2
+  },
+  messageView: {
+    backgroundColor: 'white',
+    flex: 1,
+    paddingRight: 15,
+    padding: 10
+  },
+  row: {
+    flexDirection: 'row',
+    marginBottom: 3
+  },
+  messageView: {
+    backgroundColor: 'white',
+    flex: 1,
+    paddingRight: 15
+  },
+  messageText: {
+    fontSize: 14,
+    fontWeight: '300',
+  },
+  author:{
+    fontSize: 12,
+    fontWeight: '700'
+  },
+  messageText: {
+    fontSize: 14,
+    fontWeight: '300',
+  },
+  author:{
+    fontSize: 12,
+    fontWeight: '700'
   },
   icon: {
     height: 40,

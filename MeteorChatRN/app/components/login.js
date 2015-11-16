@@ -99,9 +99,11 @@ let styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 24,
+    fontWeight: '300',
+    color: '#1A263F',
     padding: 5,
-    marginBottom: 30
+    marginBottom: 25,
   },
   button: {
     backgroundColor: '#E0514B',
@@ -120,7 +122,7 @@ let styles = StyleSheet.create({
     color: '#1A263F',
     textAlign: 'center',
     fontSize: 14,
-    marginTop: 10, 
+    marginTop: 10,
   },
   linkContainer: {
 
